@@ -237,6 +237,7 @@ class helper_plugin_include extends DokuWiki_Plugin { // DokuWiki_Helper_Plugin
     function _get_instructions($page, $sect, $mode, $lvl, $flags, $root_id = null, $included_pages = array()) {
         $key = ($sect) ? $page . '#' . $sect : $page;
         $this->includes[$key] = true; // legacy code for keeping compatibility with other plugins
+        $ins = [];
 
         // keep compatibility with other plugins that don't know the $root_id parameter
         if (is_null($root_id)) {
